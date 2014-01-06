@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12B19" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Crystal" representedClassName="Crystal" syncable="YES">
+        <attribute name="boiling_temperature" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="color" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="density" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="form" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="formula" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="image_data" optional="YES" attributeType="Transformable" valueTransformerName="ImageToDataTransformer" indexed="YES" syncable="YES"/>
+        <attribute name="melt_temperature" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="molar_mass" optional="YES" attributeType="Double" defaultValueString="0.0" indexed="YES" syncable="YES"/>
+        <attribute name="solubility" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="starred" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="tag" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Element" representedClassName="Element" syncable="YES">
+        <attribute name="atomic_radius" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="boiling_temperature" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="chinese_name" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="common_compounds" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="common_valencey" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="density" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="description_of_element" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="discovered_year" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="discoverer" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="element" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="elementary_substance" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="english_name" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="ionic_radius" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="melt_temperature" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="molar_mass" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="molar_number" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="origin" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="origin_of_name" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="overview" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="radio" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="starred" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="usage" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="newRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reaction" inverseName="newRelationship" inverseEntity="Reaction" syncable="YES"/>
+    </entity>
+    <entity name="Reaction" representedClassName="Reaction" syncable="YES">
+        <attribute name="formula" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="image_address" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="image_data" optional="YES" attributeType="Transformable" valueTransformerName="ImageToDataTransformer" indexed="YES" syncable="YES"/>
+        <attribute name="image_height" optional="YES" attributeType="Float" defaultValueString="0.0" indexed="YES" syncable="YES"/>
+        <attribute name="image_width" optional="YES" attributeType="Float" defaultValueString="0.0" indexed="YES" syncable="YES"/>
+        <attribute name="reaction_condition" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="reaction_description" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="starred" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="tag" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="newRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Element" inverseName="newRelationship" inverseEntity="Element" syncable="YES"/>
+    </entity>
+    <entity name="Substance_With_Ksp" representedClassName="Substance_With_Ksp" syncable="YES">
+        <attribute name="formula" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="image_data" optional="YES" attributeType="Transformable" valueTransformerName="ImageToDataTransformer" indexed="YES" syncable="YES"/>
+        <attribute name="ksp" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="pksp" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="starred" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="tag" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Thermodynamics_Data" representedClassName="Thermodynamics_Data" syncable="YES">
+        <attribute name="enthalpy" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="entropy" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="formula" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="gibbs" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="heat_capacity" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="image_data" optional="YES" attributeType="Transformable" valueTransformerName="ImageToDataTransformer" indexed="YES" syncable="YES"/>
+        <attribute name="starred" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="tag" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Crystal" positionX="241" positionY="36" width="128" height="210"/>
+        <element name="Element" positionX="34" positionY="-225" width="128" height="390"/>
+        <element name="Reaction" positionX="18" positionY="309" width="128" height="195"/>
+        <element name="Substance_With_Ksp" positionX="223" positionY="264" width="128" height="135"/>
+        <element name="Thermodynamics_Data" positionX="-162" positionY="27" width="128" height="180"/>
+    </elements>
+</model>
